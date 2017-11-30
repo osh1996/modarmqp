@@ -1,19 +1,12 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-import design
+from PyQt5 import QtCore, QtGui, QtWidgets
+from  PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
+from mainPage import Ui_MainWindow
 
+app = QApplication(sys.argv)
+window = QMainWindow()
+ui = Ui_MainWindow()
+ui.setupUi(window)
 
-class ExampleApp(QMainWindow):
-    def __init__(self, parent=None):
-        super(ExampleApp, self).__init__(parent)
-        self.setupUi(self)
-
-def main():
-    app = QApplication(sys.argv)
-    form = ExampleApp()
-    form.show()
-    app.exec_()
-
-if __name__ == '__main__':
-    main()
+window.show()
+sys.exit(app.exec_())
